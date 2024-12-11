@@ -1,9 +1,15 @@
 
 
 var icon = document.querySelector('.icon');
+var informationAware = document.querySelector('.information-aware')
 var inputLogin = document.querySelector('#login');
 var inputSenha = document.querySelector('#password');
 var button = document.querySelector('#submit');
+var buttonaware = document.querySelector('#btn-aware');
+
+if(localStorage.getItem('fechouLgpd')){
+    closeAware();
+}
 
 function changeEye() {
 
@@ -51,8 +57,17 @@ function RemoveValidation() {
     }
 }
 
+function closeAware() {
+    informationAware.style.display = 'none';
+
+    localStorage.setItem('fechouLgpd', 'sim');
+}
+
+
+
 icon.addEventListener('click', changeEye);
 inputLogin.addEventListener('keyup', RemoveValidation);
 inputSenha.addEventListener('keyup', showEye);
 button.addEventListener('click', validationData);
+buttonaware.addEventListener('click', closeAware)
 
