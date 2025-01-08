@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-</head>
 
+</head>
 <body class="bg-primary">
+    
     <div class="d-flex align-items-center vh-100">
-        <div class="container bg-white p-5 rounded-2">
+        <div class="container bg-white p-5 rounded-3">
             <div class="row align-items-center">
+                
                 <div class="col-md-6 d-none d-md-block">
-                    <img src="assets/images/login.png" alt="imagem de login" class="img-fluid">
+                    <img src="img/login.png" alt="" class="img-fluid">
                 </div>
+                            
                 <div class="col-md-6">
-                    <h1>Que bom ter você de volta</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores harum libero consectetur sed
-                    </p>
-                    <form action="" onsubmit="return false">
+                    <h1>Que bom ter você de volta!</h1>
+                    <p>Entre com suas informações para acessar o sistema!</p>
+
+                    <form action="painel.html" method="">
+                        
                         <div>
                             <label for="login">Login</label>
                             <input type="text" class="form-control mb-3" id="login" placeholder="Seu email cadastrado">
@@ -29,25 +32,32 @@
 
                         <div class="position-relative">
                             <label for="senha">Senha</label>
-                            <input type="password" class="form-control mb-3" id="password" placeholder="Senha">
-                            <img src="assets/images/closed.svg" width="25" alt="" class="icon">
+                            <input type="password" class="form-control mb-3" id="senha" placeholder="*********">
+                            <img src="img/closed.svg" width="25" alt="" class="icon">
                         </div>
-                    
-                        <button type="submit" class="btn btn-primary" id="submit" >Entrar no Sistema</button>
+
+                        <button type="submit" class="btn btn-coti">Entrar no sistema</button>
+
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="bg-dark text-white p-4 fixed-bottom information-aware">
+    <div class="bg-dark text-white p-4 fixed-bottom" id="msg-lgpd">
         <div class="row">
-            <div class="col-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam molestias harum ab totam incidunt blanditiis voluptatem libero neque! Velit necessitatibus labore eos, tenetur quam veniam a dolor porro qui? Eligendi?</div>
-            <div class="col-2"><button class="btn btn-light" id="btn-aware">Estou ciente</button></div>
+            <div class="col-10">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo temporibus quae debitis. Neque, aperiam soluta! Sequi, odio deserunt? Aliquid quas consequatur dolorem eligendi dolor neque, modi voluptatum voluptatibus nisi tenetur.</p>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-light" id="btn-lgpd">Estou ciente</button>
+            </div>
         </div>
     </div>
 
     <script src="js/login.js"></script>
-</body>
+    <script src="js/lgpd.js"></script>
 
+</body>
 </html>

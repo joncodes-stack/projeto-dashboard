@@ -1,73 +1,48 @@
+//alert('ok');
 
+//var -> Variável no formato clássico
+//let -> Variável mais moderna que não permite redeclaração
+//const -> Constante, usada quando o valor não vai sofrer mudanças
 
-var icon = document.querySelector('.icon');
-var informationAware = document.querySelector('.information-aware')
-var inputLogin = document.querySelector('#login');
-var inputSenha = document.querySelector('#password');
-var button = document.querySelector('#submit');
-var buttonaware = document.querySelector('#btn-aware');
+//Selecionando os elementos HTML que serão manipulados pelo JS
+const icon = document.querySelector('.icon');
+const inputSenha = document.querySelector('#senha');
 
-if(localStorage.getItem('fechouLgpd')){
-    closeAware();
-}
+function alterarInput() {
+    //alert('Função acionada');
 
-function changeEye() {
+    let inputType = inputSenha.getAttribute('type');
+    console.log(inputType);
 
-    var type = inputSenha.getAttribute('type')
+    //== comparação (igualdade)
 
-    if (type == 'password') {
-        icon.src = "assets/images/open.svg"
-        inputSenha.type = "text"
-    } else {
-        icon.src = "assets/images/closed.svg"
-        inputSenha.type = "password"
+    if (inputType == 'password') {
+        //inputSenha.type = 'text';
+        inputSenha.setAttribute('type', 'text');
+        icon.setAttribute('src', 'img/open.svg');
+    }
+
+    else {
+        //inputSenha.type = 'password';
+        inputSenha.setAttribute('type', 'password');
+        icon.setAttribute('src', 'img/closed.svg');
     }
 
 }
 
-function showEye() {
+function showIcon() {
     
-    if (inputSenha.value.length > 0) {
-        inputSenha.style.outline  = 'none';
-    }
-
+    //se a quantidade de caracteres(length) digitada no input for maior que zero
     if (inputSenha.value.length > 0) {
         icon.style.display = 'block';
-    } else {
+    }
+
+    else {
         icon.style.display = 'none';
-    }
+    }    
 
 }
 
-function validationData() {
-
-    if (inputLogin.value.length <= 0) {
-        inputLogin.style.outline  = '1px solid red';
-    }
-
-    if (inputSenha.value.length <= 0) {
-        inputSenha.style.outline  = '1px solid red';
-    }
-}
-
-function RemoveValidation() {
-
-    if (inputLogin.value.length > 0) {
-        inputLogin.style.outline  = 'none';
-    }
-}
-
-function closeAware() {
-    informationAware.style.display = 'none';
-
-    localStorage.setItem('fechouLgpd', 'sim');
-}
-
-
-
-icon.addEventListener('click', changeEye);
-inputLogin.addEventListener('keyup', RemoveValidation);
-inputSenha.addEventListener('keyup', showEye);
-button.addEventListener('click', validationData);
-buttonaware.addEventListener('click', closeAware)
-
+//Eventos que irão acionar as funções
+icon.addEventListener('click', alterarInput);
+inputSenha.addEventListener('keyup', showIcon);

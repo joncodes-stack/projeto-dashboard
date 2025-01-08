@@ -1,4 +1,14 @@
-.icon {
+.btn-coti{
+    background-color: #003366;
+    color: white;
+}
+
+.btn-coti:hover{
+    background-color: #111111;
+    color: white;
+}
+
+.icon{
     position: absolute;
     right: 10px;
     top: 30px;
@@ -6,6 +16,15 @@
     display: none;
 }
 
+/*remove o ícone no EDGE*/
 ::-ms-reveal{
     display: none;
+}
+
+@media (min-width: 768px){
+
+    .layout{
+        height: 100vh;
+    }
+
 }

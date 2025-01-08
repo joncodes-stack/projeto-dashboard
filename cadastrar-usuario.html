@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Sistema</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="bg-light">
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-light">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Sistema ADMIN</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente sair do sistema?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Permanecer no
+                        sistema</button>
+                    <a href="index.html" class="btn btn-danger">Sair do Sistema</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="row layout">
+
+            <div class="col-lg-2 col-md-3 bg-dark">
+
+                <div class="d-flex justify-content-between justify-content-md-center align-items-center">
+                    <h1 class="text-white text-center my-3">Admin</h1>
+                    <button class="btn btn-outline-light d-md-none" data-bs-toggle="collapse" data-bs-target="#menu">
+                        <i class="bi bi-list"></i>
+                    </button>
+                </div>
+
+                <nav class="menu collapse d-md-block" id="menu">
+                    <a href="painel.html" class="btn btn-outline-light d-block mb-2"><i class="bi bi-house-door"></i>
+                        Início</a>
+                    <a href="#" data-bs-toggle="collapse" data-bs-target="#menu-user"
+                        class="btn btn-outline-light d-block mb-2"><i class="bi bi-house-door"></i>
+                        Usuarios</a>
+                    <div id="menu-user" class="collapse">
+                        <a href="cadastrar-usuario.html" class="btn btn-light d-block mb-2 ms-3">Adicionar usuário</a>
+                        <a href="consultar-usuario.html" class="btn btn-light d-block mb-2 ms-3">Consultar usuários</a>
+                    </div>
+
+                    <a href="#" data-bs-toggle="collapse" data-bs-target="#menu-client"
+                        class="btn btn-outline-light d-block mb-2"><i class="bi bi-house-door"></i>
+                        Clientes</a>
+                    <div id="menu-client" class="collapse">
+                        <a href="cadastrar-cliente.html" class="btn btn-light d-block mb-2 ms-3">Adicionar Cliente</a>
+                        <a href="consultar-cliente.html" class="btn btn-light d-block mb-2 ms-3">Consultar Clientes</a>
+                    </div>
+
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        class="btn btn-outline-light d-block mb-2"><i class="bi bi-house-door"></i>
+                        Sair</a>
+
+                </nav>
+
+            </div>
+
+            <div class="col-lg-10 col-md-9 p-5 position-relative">
+                <h1>Bem-vindo ao Sistema</h1>
+                <p>Preencha as informações abaixo</p>
+                <form>
+                    <div class="row row-gap-2">
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Nome" class="form-control">
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="E-mail" class="form-control">
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="CPF" class="form-control">
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Login" class="form-control">
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Senha" class="form-control">
+                        </div>
+                        <div class="col-lg-4">
+                            <select class="form-select">
+                                <option>Selecione o Perfil</option>
+                                <option>Admin</option>
+                                <option>Usuário Comum</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" placeholder="Cep" id="cep" class="form-control">
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Logradouro" id="logradouro" class="form-control">
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" placeholder="Número" id="numero" class="form-control">
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" placeholder="Complemento" id="complemento" class="form-control">
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="text" placeholder="Bairro" id="bairro" class="form-control">
+                        </div>
+                        <div class="col-lg-5">
+                            <input type="text" placeholder="Cidade" id="cidade" class="form-control">
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="text" placeholder="Uf" id="uf" class="form-control">
+                        </div>
+                    </div>
+                    <div class="text-end">
+                        <button class="btn btn-success mt-3 ">Cadastrar Usuário</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-dark py-2 text-light text-center fixed-bottom">
+        Sistema Admin - Todos os direitos reservados
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const cep = document.querySelector('#cep');
+        const logradouro = document.querySelector('#logradouro');
+        const complemento = document.querySelector('#complemento');
+        const bairro = document.querySelector('#bairro');
+        const cidade = document.querySelector('#cidade');
+        const uf = document.querySelector('#uf');
+
+        cep.addEventListener('blur', function(){
+            
+            let cepDigitado = cep.value;
+            let url = `https://viacep.com.br/ws/${cepDigitado}/json`;
+
+            fetch(url)
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(data){
+                logradouro.value = data.logradouro
+                complemento.value = data.complemento
+                bairro.value = data.bairro
+                cidade.value = data.localidade
+                uf.value = data.uf
+            })
+
+            .catch(function(erro){
+                console.log(erro + ' Erro ao acessar API')
+            })
+        })
+
+    </script>
+    
+</body>
+
+</html>
